@@ -4,7 +4,7 @@ import os
 import csv
 
 #Set path for file
-csvpath = os.path.join('/..', 'Resources', 'budget_data.csv')
+csvpath = os.path.join('Resources', 'budget_data.csv')
 
 total_months = []
 net_profit = []
@@ -14,7 +14,7 @@ M=lambda L:max([L[x+1]-L[x] for x in range(len(L)-1)])
 N=lambda L:min([L[x+1]-L[x] for x in range(len(L)-1)])
 
 # Open and read csv
-with open("budget_data.csv", newline="") as csvfile:
+with open("Resources/budget_data.csv", newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader)
 
@@ -25,7 +25,7 @@ with open("budget_data.csv", newline="") as csvfile:
     print(total_months)
     print()
     
-print(len(total_months))
+#print(len(total_months))
 print(sum(net_profit))
 print(H(net_profit))
 print(M(net_profit))
